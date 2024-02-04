@@ -1,0 +1,7 @@
+/* .my-icon {
+  text-align: center;
+} */
+.text {
+  display: flex;
+  justify-content: last baseline;
+}
