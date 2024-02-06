@@ -1,4 +1,5 @@
 import "./App.css";
+import { LoginForm } from "./LoginForm/LoginForm";
 import favouriteBooks from "./data.json";
 import { BookList } from "./BookList/BookList";
 import { Alert } from "./Alert/Alert";
@@ -36,6 +37,10 @@ export const App = () => {
     document.title = `You clicked ${clickValue} times`;
   });
 
+  const handleSubmit = (userData) => {
+    console.log(userData);
+  };
+
   return (
     <>
       <h1>Books of the week</h1>
@@ -65,6 +70,7 @@ export const App = () => {
       <button onClick={() => setClickValue(clickValue + 1)}>
         You clicked {clickValue} times
       </button>
+      <LoginForm submit={handleSubmit} />
     </>
   );
 };
