@@ -1,9 +1,12 @@
 export const BookList = ({ books }) => {
   return (
-    <ul>
-      {books.map((book) => {
-        return <li key={book.id}>{book.name}</li>;
-      })}
-    </ul>
+    <>
+      <h1>Books of the week</h1>
+      <ul>
+        {books.map((book) => {
+          return <li key={book.id}>{book.name}</li>;
+        })}
+      </ul>
+    </>
   );
 };

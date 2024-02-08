@@ -7,6 +7,12 @@ import { UserMenu } from "./UserMenu/UserMenu";
 import { Button } from "./Button/Button";
 import { ClickCounter } from "./CounterClicks/CounterClicks";
 import { useState, useEffect } from "react";
+import { SearchBar } from "./SearchBar/SearchBar";
+import { LangSwitcher } from "./LangSwitcher/LangSwitcher";
+import { CofeeSize } from "./CoffeSize/CofeeSize";
+import { CheckBox } from "./CheckBox/CheckBox";
+import { LogForm } from "./LogForm/LogForm";
+import { FeedbackForm } from "./FeedBackForm/FeedBackForm";
 
 export const App = () => {
   const [clicks, setClicks] = useState(0);
@@ -15,6 +21,7 @@ export const App = () => {
     y: 0,
   });
   const [clickValue, setClickValue] = useState(0);
+  const [lang, setLang] = useState("uk");
 
   const updateX = () => {
     setValues({
@@ -43,7 +50,6 @@ export const App = () => {
 
   return (
     <>
-      <h1>Books of the week</h1>
       <BookList books={favouriteBooks} />
       <Alert variant="info" elevated>
         Would you like to browse our recommended products?
@@ -71,6 +77,13 @@ export const App = () => {
         You clicked {clickValue} times
       </button>
       <LoginForm submit={handleSubmit} />
+      <SearchBar />
+      <p>Selected language: {lang}</p>
+      <LangSwitcher value={lang} onChange={setLang} />
+      <CofeeSize />
+      <CheckBox />
+      <LogForm />
+      <FeedbackForm />
     </>
   );
 };
